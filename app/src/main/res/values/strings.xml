@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Book Listing</string>
+
+    <string name="button_query">Query</string>
+    <string name="edittext_hint">Enter book</string>
+    <string name="message_error">There was a problem searching for your book.  Please try again later.</string>
+    <string name="textview_hint">There were no results. Try searching using another word.</string>
+</resources>
