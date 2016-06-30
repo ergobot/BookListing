@@ -4,5 +4,5 @@
     <string name="button_query">Query</string>
     <string name="edittext_hint">Enter book</string>
     <string name="message_error">There was a problem searching for your book.  Please try again later.</string>
-    <string name="textview_hint">There were no results. Try searching using another word.</string>
+    <string name="textview_hint">Search for books by entering a word in the box above.</string>
 </resources>

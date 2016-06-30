@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,11 +45,31 @@ public class MainActivity extends ListActivity {
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        queryBooks(null);
+    }
+
+    public void showUserHint(){
+        ((TextView)findViewById(R.id.noresults)).setVisibility(View.VISIBLE);
+    }
+
+    public void hideUserHint(){
+        ((TextView)findViewById(R.id.noresults)).setVisibility(View.VISIBLE);
+    }
+
+
     public void queryBooks(View view){
         // asynctask
         BookQueryTask bookQueryTask = new BookQueryTask();
         String query = String.valueOf( ((TextView)findViewById(R.id.input)).getText());
-        bookQueryTask.execute(query);
+        if(query.isEmpty()){
+            showUserHint();
+        }else {
+            hideUserHint();
+            bookQueryTask.execute(query);
+        }
     }
 
     private class BookAdapter extends ArrayAdapter<Book> {
